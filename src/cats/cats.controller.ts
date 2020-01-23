@@ -3,16 +3,17 @@ import { CatsService } from './cats.service';
 import { Cat } from './cat';
 import { ApiTags } from '@nestjs/swagger';
 
-@Controller('cats')
+@ApiTags('v1')
+@Controller('api/v1')
 export class CatsController {
     constructor(private srv: CatsService) {}
 
-    @Get()
+    @Get('cats')
     getCats() {
         return this.srv.getCats();
     }
 
-    @Post()
+    @Post('cats')
     createCat (@Body() cat: Cat) {
         this.srv.createCats(cat);
     }

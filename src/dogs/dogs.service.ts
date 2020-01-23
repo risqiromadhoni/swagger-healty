@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Dog, DogType } from './dog';
+import { Dog, DogType, DogAddr } from './dog';
 
 @Injectable()
 export class DogsService {
@@ -8,7 +8,7 @@ export class DogsService {
             id: 1,
             name: 'Blacky',
             type: DogType.Cihuahua,
-            addr: 'ID'
+            addr: DogAddr.ID
         }
     ];
 
